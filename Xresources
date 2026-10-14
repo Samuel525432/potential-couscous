@@ -1,0 +1,16 @@
+! --- 90s Xterm Customization ---
+
+! Use the legendary, pixel-sharp 9x15 X11 bitmap font
+xterm*font: -*-fixed-medium-r-normal-*-15-*-*-*-*-*-iso8859-1
+! A slightly larger fallback bitmap font if you prefer
+xterm*boldFont: -*-fixed-bold-r-normal-*-15-*-*-*-*-*-iso8859-1
+
+! Traditional 90s Workstation Colors (Slightly off-white text on dark charcoal)
+xterm*background: #1a1a1a
+xterm*foreground: #e3e3e3
+
+! Classic terminal window configurations
+xterm*geometry: 80x24
+xterm*scrollBar: true
+xterm*rightScrollBar: true
+xterm*saveLines: 1000
