@@ -1,16 +1,25 @@
-! --- 90s Xterm Customization ---
+! --------------------------------------------------------------------
+! NeXTSTEP 3.0 Minimalist Xterm Configuration Theme
+! --------------------------------------------------------------------
 
-! Use the legendary, pixel-sharp 9x15 X11 bitmap font
-xterm*font: -*-fixed-medium-r-normal-*-15-*-*-*-*-*-iso8859-1
-! A slightly larger fallback bitmap font if you prefer
-xterm*boldFont: -*-fixed-bold-r-normal-*-15-*-*-*-*-*-iso8859-1
+! Core Frame and Contrast Backgrounds
+XTerm*background:       black
+XTerm*foreground:       white
+XTerm*cursorColor:      white
 
-! Traditional 90s Workstation Colors (Slightly off-white text on dark charcoal)
-xterm*background: #1a1a1a
-xterm*foreground: #e3e3e3
+! Internal Mechanics & Padding
+XTerm*scrollBar:        false
+XTerm*saveLines:        4096
 
-! Classic terminal window configurations
-xterm*geometry: 80x24
-xterm*scrollBar: true
-xterm*rightScrollBar: true
-xterm*saveLines: 1000
+! Fonts (Replicates the un-smoothed Nimbus/Helvetica style on your T490)
+XTerm*faceName:         Nimbus Sans:style=Bold
+XTerm*faceSize:         13
+XTerm*renderFont:       true
+
+! Classic Right-Click / Ctrl-Click Xterm Popup Menus
+XTerm*mainMenu*Background:  #C0C0C0
+XTerm*mainMenu*Foreground:  black
+XTerm*vtMenu*Background:    #C0C0C0
+XTerm*vtMenu*Foreground:    black
+XTerm*fontMenu*Background:  #C0C0C0
+XTerm*fontMenu*Foreground:  black
