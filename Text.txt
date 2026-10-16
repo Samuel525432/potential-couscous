@@ -1,0 +1,3 @@
+echo 'Shortcuts = { RunCommand1 = "Control+Mod1+l"; };' >> ~/GNUstep/Defaults/WindowMaker
+
+echo 'UserCommands = { RunCommand1 = "xlock -mode qix"; };' >> ~/GNUstep/Defaults/WindowMaker
