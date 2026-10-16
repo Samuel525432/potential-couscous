@@ -1,0 +1,23 @@
+# Classic NeXTSTEP 3.0 Light Gray GTK2 Engine Theme Configuration
+style "nextstep-default" {
+    base[NORMAL]      = "#C0C0C0"
+    base[ACTIVE]      = "#A0A0A0"
+    base[INSENSITIVE] = "#C0C0C0"
+    base[SELECTED]    = "#333366" # Matches your Indigo preference highlight
+
+    bg[NORMAL]        = "#C0C0C0"
+    bg[ACTIVE]        = "#A0A0A0"
+    bg[INSENSITIVE]   = "#C0C0C0"
+    bg[SELECTED]      = "#333366"
+
+    fg[NORMAL]        = "#000000"
+    fg[ACTIVE]        = "#000000"
+    fg[INSENSITIVE]   = "#808080"
+    fg[SELECTED]      = "#FFFFFF"
+
+    text[NORMAL]      = "#000000"
+    text[ACTIVE]      = "#000000"
+    text[INSENSITIVE] = "#808080"
+    text[SELECTED]    = "#FFFFFF"
+}
+class "GtkWidget" style "nextstep-default"
