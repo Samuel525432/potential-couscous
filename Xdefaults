@@ -8,12 +8,16 @@ XLock.mode:             qix
 XLock.qix.count:        4
 XLock.qix.cycles:       64
 
-! Use the precise NeXTSTEP background & text values
+! Colors matching the NeXTSTEP workspace
 XLock.background:       #333366
-XLock.foreground:       #A2A6AA
+XLock.foreground:       #D8D8D8
+XLock.textcolor:        #A0A0A0
 
-! Typography style matching WINGs widgets
+! Typography & Clean Field Padding Fixes
 XLock.font:             -b&h-lucida-medium-r-normal-sans-14-*-*-*-p-*-iso8859-1
-XLock.username:         Identity: 
-XLock.password:         Passphrase: 
-XLock.validate:         Verifying...
+XLock.planfont:         -b&h-lucida-medium-r-normal-sans-12-*-*-*-p-*-iso8859-1
+
+! Simplified text fields to prevent character overlap crashing the icon layout
+XLock.username:         User: 
+XLock.password:         Pass: 
+XLock.validate:         Checking...
