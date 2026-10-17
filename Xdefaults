@@ -3,14 +3,17 @@
 ! Mode: qix (Classic Retro Line-Vector Animation)
 ! ==============================================================================
 
+! Authentic NeXTSTEP 3.0 Styled XLock Configurations
 XLock.mode:             qix
-XLock.font:             -b&h-lucida-medium-r-normal-sans-14-*-*-*-p-*-iso8859-1
-XLock.background:       #1a1a1a
-XLock.foreground:       #a0a0a0
-XLock.username:         Username: 
-XLock.password:         Password: 
-XLock.validate:         Verifying...
-
-! --- Qix Vector Animation Tuning ---
 XLock.qix.count:        4
 XLock.qix.cycles:       64
+
+! Use the precise NeXTSTEP background & text values
+XLock.background:       #333366
+XLock.foreground:       #A2A6AA
+
+! Typography style matching WINGs widgets
+XLock.font:             -b&h-lucida-medium-r-normal-sans-14-*-*-*-p-*-iso8859-1
+XLock.username:         Identity: 
+XLock.password:         Passphrase: 
+XLock.validate:         Verifying...
