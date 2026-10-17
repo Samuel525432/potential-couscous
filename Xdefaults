@@ -1,0 +1,16 @@
+! ==============================================================================
+! XLockMore Configuration for WindowMaker / WDM
+! Mode: qix (Classic Retro Line-Vector Animation)
+! ==============================================================================
+
+XLock.mode:             qix
+XLock.font:             -b&h-lucida-medium-r-normal-sans-14-*-*-*-p-*-iso8859-1
+XLock.background:       #1a1a1a
+XLock.foreground:       #a0a0a0
+XLock.username:         Username: 
+XLock.password:         Password: 
+XLock.validate:         Verifying...
+
+! --- Qix Vector Animation Tuning ---
+XLock.qix.count:        4
+XLock.qix.cycles:       64
