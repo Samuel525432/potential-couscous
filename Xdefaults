@@ -13,11 +13,12 @@ XLock.background:       #333366
 XLock.foreground:       #D8D8D8
 XLock.textcolor:        #A0A0A0
 
-! Typography & Clean Field Padding Fixes
-XLock.font:             -b&h-lucida-medium-r-normal-sans-14-*-*-*-p-*-iso8859-1
-XLock.planfont:         -b&h-lucida-medium-r-normal-sans-12-*-*-*-p-*-iso8859-1
+! --- THE FONT & PADDING FIXES ---
+! Use clean, crisp fixed-width standard fonts to force consistent spacing
+XLock.font:             9x15
+XLock.planfont:         6x10
 
-! Simplified text fields to prevent character overlap crashing the icon layout
-XLock.username:         User: 
-XLock.password:         Pass: 
+! Short prompts with trailing spaces to push the text boxes away from labels
+XLock.username:         User:  
+XLock.password:         Pass:  
 XLock.validate:         Checking...
