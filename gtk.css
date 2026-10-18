@@ -1,0 +1,61 @@
+/* 
+ * GIMP 3.2 GTK3 Configuration Override File
+ * Purpose: Retro UI Flattening & File Dialog Compression for NeXTSTEP Rice
+ */
+
+/* ==========================================
+ * 1. DIALOG & FILE CHOOSER SIZE CONTROL
+ * ========================================== */
+
+/* Hard-cap the initial size constraints of the file chooser */
+filechooserdialog, 
+window.dialog.modal.sidebar-file-chooser,
+.file-chooser {
+    min-width: 480px !important;
+    max-width: 600px !important;
+    min-height: 360px !important;
+    max-height: 450px !important;
+}
+
+/* Force compact spacing inside the file browser navigation tree views */
+filechooserdialog treeview,
+filechooserdialog treeview cells {
+    padding: 1px 2px !important;
+    margin: 0px !important;
+}
+
+/* Shrink the size of the sidebar place navigation shortcuts */
+filechooserdialog stack sidebar,
+filechooserdialog plcessidebar {
+    min-width: 120px !important;
+    max-width: 150px !important;
+}
+
+
+/* ==========================================
+ * 2. 90s RETRO UI FLATTENING & TYPOGRAPHY
+ * ========================================== */
+
+/* Eliminate smooth modern drop shadows and blurs from all workspace elements */
+window, 
+dialog, 
+.background, 
+menu, 
+popover, 
+.tooltip {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-radius: 0px !important; /* Forces vintage sharp 90s right-angle corners */
+}
+
+/* Force classic crisp system fonts across GIMP dropdowns, menus, and layout titles */
+menu, 
+menubar, 
+menuitem, 
+label, 
+.sidebar, 
+notebook tab {
+    font-family: "Helvetica", "Courier", "Nimbus Mono", monospace !important;
+    font-size: 11pt !important;
+    font-weight: normal !important;
+}
