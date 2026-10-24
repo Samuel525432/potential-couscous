@@ -1,61 +1,68 @@
-/* 
- * GIMP 3.2 GTK3 Configuration Override File
- * Purpose: Retro UI Flattening & File Dialog Compression for NeXTSTEP Rice
- */
+/* ==========================================================================
+   SpaceFM Minimal Dark Mode & Blue Accent Override
+   ========================================================================== */
 
-/* ==========================================
- * 1. DIALOG & FILE CHOOSER SIZE CONTROL
- * ========================================== */
+/* Color variables to match a standard dwm config.h layout */
+@define-color spacefm_dark_bg    #1a1a1a; /* Clean dark panel canvas */
+@define-color spacefm_darker_bg  #111111; /* Deeper accent background */
+@define-color spacefm_text       #bbbbbb; /* Low-contrast dull text */
+@define-color spacefm_blue       #005577; /* Classic dwm blue selection highlight */
+@define-color spacefm_white      #ffffff; /* Active focused bright text */
 
-/* Hard-cap the initial size constraints of the file chooser */
-filechooserdialog, 
-window.dialog.modal.sidebar-file-chooser,
-.file-chooser {
-    min-width: 480px !important;
-    max-width: 600px !important;
-    min-height: 360px !important;
-    max-height: 450px !important;
+/* Core SpaceFM canvas widgets and tree lists */
+SpaceView, 
+SpacePanels, 
+SpaceSide,
+GtkTreeView, 
+GtkIconView {
+    background-color: @spacefm_dark_bg;
+    color: @spacefm_text;
+    border: none;
+    box-shadow: none;
 }
 
-/* Force compact spacing inside the file browser navigation tree views */
-filechooserdialog treeview,
-filechooserdialog treeview cells {
-    padding: 1px 2px !important;
-    margin: 0px !important;
+/* Detail list-view sorting headers */
+GtkTreeView column-header,
+GtkTreeView button {
+    background-image: none;
+    background-color: @spacefm_darker_bg;
+    color: @spacefm_text;
+    border: 1px solid @spacefm_dark_bg;
+    text-shadow: none;
+    box-shadow: none;
 }
 
-/* Shrink the size of the sidebar place navigation shortcuts */
-filechooserdialog stack sidebar,
-filechooserdialog plcessidebar {
-    min-width: 120px !important;
-    max-width: 150px !important;
+/* Row-selection states: Forces the dwm blue highlight on active items */
+SpaceView:selected,
+SpaceView:selected:focus,
+GtkTreeView:selected,
+GtkTreeView:selected:focus,
+GtkIconView:selected,
+GtkIconView:selected:focus {
+    background-color: @spacefm_blue;
+    color: @spacefm_white;
 }
 
-
-/* ==========================================
- * 2. 90s RETRO UI FLATTENING & TYPOGRAPHY
- * ========================================== */
-
-/* Eliminate smooth modern drop shadows and blurs from all workspace elements */
-window, 
-dialog, 
-.background, 
-menu, 
-popover, 
-.tooltip {
-    box-shadow: none !important;
-    text-shadow: none !important;
-    border-radius: 0px !important; /* Forces vintage sharp 90s right-angle corners */
+/* Text boxes, search filters, and location input fields */
+GtkEntry {
+    background-color: @spacefm_darker_bg;
+    color: @spacefm_white;
+    border: 1px solid @spacefm_blue;
+    border-radius: 0px; /* Monochromatic sharp corners */
+    caret-color: @spacefm_white;
 }
 
-/* Force classic crisp system fonts across GIMP dropdowns, menus, and layout titles */
-menu, 
-menubar, 
-menuitem, 
-label, 
-.sidebar, 
-notebook tab {
-    font-family: "Helvetica", "Courier", "Nimbus Mono", monospace !important;
-    font-size: 11pt !important;
-    font-weight: normal !important;
+/* Right-click popups and main text menus */
+GtkMenu, 
+GtkMenuBar,
+GtkMenuItem {
+    background-color: @spacefm_darker_bg;
+    color: @spacefm_text;
+    border: none;
+}
+
+/* Hover highlights within SpaceFM utility menus */
+GtkMenuItem:hover {
+    background-color: @spacefm_blue;
+    color: @spacefm_white;
 }
