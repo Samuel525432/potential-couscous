@@ -1,86 +1,36 @@
-/* /* ==========================================================================
-   Firefox Minimalist "dwm" Aesthetic Theme (userChrome.css)
+/* ==========================================================================
+   Firefox dwm-like Layout & Theme Accent Override
    ========================================================================== */
 
-/* Define core theme colors matching a standard dwm configuration */
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-:root {
-    --dwm-bg: #1a1a1a !important;
-    --dwm-bg-darker: #111111 !important;
-    --dwm-text: #bbbbbb !important;
-    --dwm-blue: #005577 !important;
-    --dwm-white: #ffffff !important;
-    
-    /* Override internal system theme colors */
-    --toolbar-field-background-color: var(--dwm-bg-darker) !important;
-    --toolbar-field-color: var(--dwm-white) !important;
-    --toolbar-field-focus-background-color: var(--dwm-bg-darker) !important;
-    --toolbar-field-focus-color: var(--dwm-white) !important;
-    --toolbar-field-border-color: var(--dwm-blue) !important;
-}
-
-/* 1. Hide the entire Tab Bar completely (Perfect for keyboard driven navigation) */
 #TabsToolbar {
     visibility: collapse !important;
 }
 
-/* 2. Strip window controls, titlebars, and spacer elements */
-#titlebar {
-    appearance: none !important;
-    margin-bottom: 0px !important;
-}
-.titlebar-spacer {
-    display: none !important;
-}
-
-/* 3. Auto-Hide Navigation/Address Bar until hovered or focused */
 #nav-bar {
-    margin-top: -45px !important;
-    transition: margin-top 0.15s ease-in-out, opacity 0.15s ease-in-out !important;
+    margin-top: -40px !important;
+    transition: margin-top 0.15s ease-in-out !important;
     opacity: 0 !important;
-    z-index: 1000 !important;
 }
 
 #navigator-toolbox:hover #nav-bar,
-#nav-bar:focus-within,
-#IdentityBox-box:focus-within {
+#nav-bar:focus-within {
     margin-top: 0px !important;
     opacity: 1 !important;
 }
 
-/* 4. Enforce flat, suckless box styling (No round corners, no shadows) */
 * {
     border-radius: 0px !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
 }
 
-/* 5. Custom URL/Address Bar Input Box Styling */
-#urlbar-background {
-    background-color: var(--dwm-bg-darker) !important;
-    border: 1px solid var(--dwm-blue) !important;
-    border-radius: 0px !important;
-}
-
-#urlbar-input {
-    color: var(--dwm-white) !important;
-}
-
-/* 6. Style the drop-down results panel under the URL box */
-.urlbarView {
-    background-color: var(--dwm-bg-darker) !important;
-    color: var(--dwm-text) !important;
-    border: 1px solid var(--dwm-blue) !important;
+#urlbar-background,
+.urlbar-input-container,
+#searchbar {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    border: 1px solid #005577 !important;
 }
 
 .urlbarView-row[selected] {
-    background-color: var(--dwm-blue) !important;
-    color: var(--dwm-white) !important;
-}
-
-/* 7. Color the main unified background bar */
-#navigator-toolbox {
-    background-color: var(--dwm-bg) !important;
-    border-bottom: 1px solid var(--dwm-blue) !important;
+    background-color: #005577 !important;
+    color: #ffffff !important;
 }
