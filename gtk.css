@@ -2,67 +2,77 @@
    SpaceFM Minimal Dark Mode & Blue Accent Override
    ========================================================================== */
 
-/* Color variables to match a standard dwm config.h layout */
-@define-color spacefm_dark_bg    #1a1a1a; /* Clean dark panel canvas */
-@define-color spacefm_darker_bg  #111111; /* Deeper accent background */
-@define-color spacefm_text       #bbbbbb; /* Low-contrast dull text */
-@define-color spacefm_blue       #005577; /* Classic dwm blue selection highlight */
-@define-color spacefm_white      #ffffff; /* Active focused bright text */
+@define-color spacefm_dark_bg    #1a1a1a;
+@define-color spacefm_darker_bg  #111111;
+@define-color spacefm_text       #bbbbbb;
+@define-color spacefm_blue       #005577;
+@define-color spacefm_white      #ffffff;
 
-/* Core SpaceFM canvas widgets and tree lists */
+/* Universal fallback for standard GTK3 selectors within SpaceFM */
+* {
+    background-color: @spacefm_dark_bg;
+    color: @spacefm_text;
+}
+
+/* Force selection rules on all treeviews, rows, grid items, and cells */
+*:selected,
+*:selected:focus,
+GtkTreeViewRow:selected,
+GtkIconViewItem:selected,
+.view:selected {
+    background-color: @spacefm_blue !important;
+    color: @spacefm_white !important;
+}
+
+/* Target SpaceFM's specific workspace components */
 SpaceView, 
 SpacePanels, 
 SpaceSide,
 GtkTreeView, 
-GtkIconView {
-    background-color: @spacefm_dark_bg;
-    color: @spacefm_text;
+GtkIconView,
+.view {
+    background-color: @spacefm_dark_bg !important;
+    color: @spacefm_text !important;
     border: none;
     box-shadow: none;
 }
 
-/* Detail list-view sorting headers */
+/* Detail list view column row headers */
 GtkTreeView column-header,
-GtkTreeView button {
-    background-image: none;
-    background-color: @spacefm_darker_bg;
-    color: @spacefm_text;
-    border: 1px solid @spacefm_dark_bg;
-    text-shadow: none;
-    box-shadow: none;
+GtkTreeView button,
+header,
+button.sidebar-button {
+    background-image: none !important;
+    background-color: @spacefm_darker_bg !important;
+    color: @spacefm_text !important;
+    border: 1px solid @spacefm_dark_bg !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
 }
 
-/* Row-selection states: Forces the dwm blue highlight on active items */
-SpaceView:selected,
-SpaceView:selected:focus,
-GtkTreeView:selected,
-GtkTreeView:selected:focus,
-GtkIconView:selected,
-GtkIconView:selected:focus {
-    background-color: @spacefm_blue;
-    color: @spacefm_white;
+/* Sharp entry fields for paths/address inputs */
+GtkEntry, entry {
+    background-color: @spacefm_darker_bg !important;
+    color: @spacefm_white !important;
+    border: 1px solid @spacefm_blue !important;
+    border-radius: 0px !important;
+    caret-color: @spacefm_white !important;
 }
 
-/* Text boxes, search filters, and location input fields */
-GtkEntry {
-    background-color: @spacefm_darker_bg;
-    color: @spacefm_white;
-    border: 1px solid @spacefm_blue;
-    border-radius: 0px; /* Monochromatic sharp corners */
-    caret-color: @spacefm_white;
-}
-
-/* Right-click popups and main text menus */
+/* Context menus and top application row dropdowns */
 GtkMenu, 
 GtkMenuBar,
-GtkMenuItem {
-    background-color: @spacefm_darker_bg;
-    color: @spacefm_text;
-    border: none;
+GtkMenuItem,
+menu,
+menubar,
+menuitem {
+    background-color: @spacefm_darker_bg !important;
+    color: @spacefm_text !important;
+    border: none !important;
 }
 
-/* Hover highlights within SpaceFM utility menus */
-GtkMenuItem:hover {
-    background-color: @spacefm_blue;
-    color: @spacefm_white;
+GtkMenuItem:hover,
+menuitem:hover {
+    background-color: @spacefm_blue !important;
+    color: @spacefm_white !important;
 }
