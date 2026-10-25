@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Firefox userContent.css - Minimal Dark Mode & Blue Accent
+   ========================================================================== */
+
+@-moz-document url("about:newtab"), url("about:home"), url("about:blank") {
+    /* Set the deep dark canvas background */
+    body, #newtab-customize-overlay, .activity-stream {
+        background-color: #1a1a1a !important;
+        color: #bbbbbb !important;
+    }
+
+    /* Style the middle search bar block */
+    .search-wrapper .search-inner-wrapper {
+        background-color: #111111 !important;
+        border: 1px solid #005577 !important;
+        border-radius: 0px !important; /* Sharp corners like dwm */
+        box-shadow: none !important;
+    }
+
+    .search-wrapper input {
+        color: #ffffff !important;
+    }
+
+    /* Style the shortcut tiles/icons */
+    .top-site-outer .top-site-icon {
+        background-color: #111111 !important;
+        border: 1px solid #005577 !important;
+        border-radius: 0px !important;
+    }
+
+    .top-site-outer .title {
+        color: #bbbbbb !important;
+    }
+
+    /* Target selected states on tiles */
+    .top-site-outer:hover .top-site-icon,
+    .top-site-outer:focus .top-site-icon {
+        background-color: #005577 !important;
+        border-color: #ffffff !important;
+    }
+
+    /* Hide unnecessary layout components like weather widget and pockets */
+    .personalize-button, .collapsible-section, .as-card, .weather-widget {
+        display: none !important;
+    }
+}
+
+@-moz-document url-prefix("about:") {
+    /* Style internal layout settings and configuration pages (about:config, about:preferences) */
+    :root {
+        --in-content-page-background: #1a1a1a !important;
+        --in-content-page-color: #bbbbbb !important;
+        --in-content-text-color: #bbbbbb !important;
+        --in-content-selected-text: #ffffff !important;
+        --in-content-primary-button-background: #005577 !important;
+        --in-content-primary-button-background-hover: #006699 !important;
+        --in-content-border-color: #005577 !important;
+        --in-content-box-background: #111111 !important;
+    }
+    
+    html, body, page {
+        background-color: #1a1a1a !important;
+        color: #bbbbbb !important;
+    }
+}
